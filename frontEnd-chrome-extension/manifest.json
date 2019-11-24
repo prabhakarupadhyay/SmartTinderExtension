@@ -1,0 +1,24 @@
+{
+	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+	"name" : "Tinder",
+	"version" : "1.0",
+	"manifest_version": 2,
+	"description" : "Make Tinder swipe easy",
+	"permissions": ["tabs","*://*.tinder.com/*"],
+	"browser_action": {
+
+		"default_icon": {                    // optional
+            "32": "Icon.png"      // optional
+          },
+		"default_title": "Tinder",
+		"default_popup": "tinder.html"
+	},
+	 "content_scripts": [
+   {
+     "matches": ["*://*.tinder.com/*"],
+     "js": ["jquery.min.js","back.js"],
+	   "run_at": "document_end"
+   }
+ ]
+	
+}
